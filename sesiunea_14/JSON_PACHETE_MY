@@ -1,0 +1,43 @@
+## 📌 Interactiunea cu fisiere
+
+###  🔷 Deschiderea fisierului - functia open()
+- functie folosita pentru a deschide un fisier
+- cand apelam functia open, putem specifica valori pentru mai multi parametri
+  - parametru obligatoriu: file (calea catre fisierul cu care dorim sa interactionam,
+  sub forma de string)
+  - parametri optionali: mode, encoding etc.
+- ne returneaza un obiect (un file handler), prin care
+putem interactiona cu fisierul deschis (citire, scriere etc.)
+
+#### 🔹 Parametrul mode
+- string care reprezinta modul in care dorim sa deschidem fisierul
+- 3 moduri principale in care putem deschide un fisier:
+  - "r" - read mode -> il folosim cand dorim sa deschidem un fisier pentru a citi
+   informatiile din acesta
+  - "w" - write mode -> il folosim cand dorim sa scriem informatii intr-un fisier
+    - daca fisierul nu exista, aceasta se va crea
+    - daca fisierul exista, indiferent daca acesta are continut, continutul va fi
+    suprascris cu noile informatii
+  - "a" - append mode -> il folosim cand dorim sa scriem informatii intr-un fisier
+    - daca fisierul nu exista, aceasta se va crea
+    - daca fisierul exista si are continut, noile informatii vor fi adaugate la final
+
+### 🔷 Inchiderea fisierului - metoda close()
+- Dupa ce am terminat de interactionat cu un fisier,
+acesta trebuie inchis, apeland metoda close() pe obiectul
+returnat de functia open()
+
+## 📌 JSON
+- JSON = Javascript Object Notation
+- Este un format tip text pentru stocare si transportare de date
+- El este independent de orice limbaj de programare, toate il folosesc
+- Suporta tipurile de date uzuale (str, int, float, list, dict)
+- Arata si se comporta in cele mai multe cazuri ca un dictionar/lista
+
+import json
+
+
+## 📌 Interactiunea cu fisiere csv
+- CSV = Coma Separated Values
+- Fisierele CSV sunt fisiere structurate sub forma tabelara
+  (excel), unde valorile coloanelor sunt separate prin virgula.

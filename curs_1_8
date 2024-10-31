@@ -1,0 +1,1861 @@
+## 📌 Variabile: definitie, de ce avem nevoie de variabile
+### 🔸 Definitie
+- O variabila este un container(adresa) din memorie care stocheaza valori.
+- Va puteti imagina o casa care se afla la o anumita adresa si contine mobila.
+
+### ❗ De retinut
+- Variabilele au un nume unic, ca sa poata fi identificate si folosite anterior.
+- Variabila este creata in momentul in care ii atribuim o valoare.
+- NU putem pune spatiu in numele unei variabile.
+- Variabilele incep cu litera mica dar pot contine cifre (user1) si simbolul _.
+- Variabilele sunt CASE-SENSITIVE (my_var = 5 e diferita de my_Var = 5).
+- Variabilele pot sa isi schimbe valoarea pe parcursul executiei programului (suprascriere).
+- Variabilele pot sa isi schimbe tipul de date pe parcursul executiei.
+- Putem atribui mai multe valori in one line, sau aceeasi valoare mai multor variabile.
+
+### ❗ De retinut
+- Se numeste constanta deoarece valoarea adresei de memorie NU poate sa varieze pe parcursul executiei programului (este constanta)
+- Caracteristica principala a constantei este faptul ca nu isi poate schimba valoarea, drept urmare atunci cand definim o constanta este important sa nu uitam de aceasta, care e de fapt cea care descrie conceptul de constanta
+- Cand vorbim despre o constanta vorbim despre o adresa de memorie, nu despre valoarea in acea adresa de memorie. Deci atunci cand definim o constanta nu spunem ca este o valoare, ci o adresa de memorie care stocheaza o valoare
+
+## 📌 Tipuri de date: string, int, float, bool
+- Datele/valorile salvate in variabile pot avea mai multe tipuri
+- Exista mai multe tipuri de date dar cele mai importante/folosite sunt:
+1. int = numar intreg
+```python
+# initializam o variabila de tip int/numar intreg
+cantitate = 10
+```
+2. float = numar zecimal
+```python
+# initializam o variabila de tip float/numar zecimal
+pret = 10.45
+```
+3. bool = adevarat/fals
+```python
+# initializam variabile de tip boolean
+este_impar = False
+este_par = True
+```
+4. string = sir de caractere de la tastatura delimitate de '  ' sau "  "
+```python
+# definim o variabila string folosind ghilimele simple
+nume = 'Popa'
+
+# definim o variabila string folosind ghilimele duble
+prenume = "Maria"
+```
+
+Functia print() este polimorfica, ea afiseaza in consola ce punem in paranteze.
+
+📌 Concatenarea string-urilor
+- Putem concatena string-uri in doua moduri:
+    - cu semnul "+"
+    - folosind f-strings
+
+```python
+nume = 'Popescu'
+print(nume)
+
+prenume = 'Carmen'
+print(prenume)
+
+nume_complet = nume + prenume
+print(nume_complet)
+print('Numele meu este ' + nume + prenume)
+
+varsta = 20
+# print("Varsta mea este de:" + varsta) # da eroare
+print(f"Varsta mea este de: {varsta}")
+print("Varsta mea este de: ", varsta)
+```
+
+## 📌 Functia built-in input()
+- Functia input() ne ajuta sa luam date de la tastatura si sa le salvam intr-o variabila.
+- Daca nu facem type casting, default-ul datelor furnizate de utilizator for fi te tip string.
+- Ulterior putem accesa valorile salvate in variabile dupa necesitate.
+
+```python
+nume = input('Cum te numesti? ') # default - string
+varsta = int(input('Cati ani ai? ')) # fortam varsta sa fie un int
+
+## 📌 Operatori aritmetici
+
+| Operator | Name           | Example |
+|----------|----------------|---------|
+| +        | Addition       | x + y   |
+| -        | Substraction   | x - y   |
+| *        | Multiplication | x * y   |
+| /        | Division       | x / y   |
+| %        | Modulus        | x % y   |
+| **       | Exponentiation | x ** y  |
+| //       | Floor division | x // 2  |
+
+
+## 📌 Operatori de atribuire
+| Operator | Example | Same as   |
+|----------|---------|-----------|
+| =        | x = 5   | x = 5     |
+| +=       | x += 3  | x = x + 3 |
+| -=       | x -= 3  | x = x - 3 |
+| *=       | x *= 3  | x = x * 3 |
+| /=       | x /= 3  | x = x / 3 |
+
+
+## 📌 Operatori logici
+
+| Operator | Description                                            | Example               |
+|----------|--------------------------------------------------------|-----------------------|
+| and      | Returns True if both statements are true               | x < 5 and x < 10      |
+| or       | Returns True if one of the statements is true          | x < 5 or x < 4        |
+| not      | reverse the result, return False if the result is True | not(x < 5 and x < 10) |
+
+
+
+## 📌 Operatori de comparare
+
+| Operator | Name                       | Example |
+|----------|----------------------------|---------|
+| ==       | Equal                      | x == y  |
+| !=       | Not equal                  | x != y  |
+| &gt;     | Greater than               | x > y   |
+| &lt;     | Less than                  | x < y   |
+| &gt;=    | Greater than or equal than | x >= y  |
+| <=       | Less than or equal to      | x <= y  |
+
+
+
+
+
+## 📌 If...else if ... else
+- Se foloseste cand avem mai mult de 2 situatii posibile
+- Conditiile se evalueaza de sus in jos
+- Se executa codul aferent primei conditii adevarate
+- Dupa ce s-a gasit un true, nu se mai verifica ce a mai ramas mai jos
+
+```python
+# robotelul telefonic
+optiune = int(input('alege o optiune'))
+if optiune == 0:
+    print('meniul anterior')
+elif optiune == 1:
+    print('ati ales ro')
+elif optiune == 2:
+    print('ati ales eng')
+else:
+    print('Nu am identificat optiunea, mai incearca.')
+```
+
+- Un singur if la inceput
+- Oricate elif-uri sunt necesare
+- Un singur else la final
+- Daca nu gaseste nici un true mai sus, else se va executa automat (e ca un default)
+
+## 📌 CONTINUE
+
+- Cuvantul cheie continue va sari peste iteratia actuala
+- E un fel de skip.
+- Se va sari peste blocul de dupa skip, care tine de for/while
+
+
+
+
+# Curs: Variable, tipuri de date
+## 📝 OBIECTIVE
+1. Setup functional
+2. Principii de baza in programare
+3. Primul meu program Python
+4. Print statement
+5. Comentarii
+6. Variabile
+7. Cele mai uzuale tipuri de date
+8. Type casting
+9. Intro in operatori
+10. Input statement
+11. Complexitatea unui string (index, length, metode ajutatoare)
+
+## 📌 Principii de baza in programare
+- A compila = a traduce din 'human reading syntax' in 'machine language'
+- Codul se interpreteaza secvential, linie cu linie, de sus in jos.
+- Machine language = binary code (cod binar) - combinatii diferite de 0 si 1.
+- Principiul seamana cu cel din codul morse. Pentru 1 se transmite un impuls electric, pentru 0 o pauza.
+- 1 bit = memorie in care incape doar o singura valoare. 1 (true), 0 (false).
+- 1 Byte = 8 biti. Numere intre 0 (000000) si 255 (111111).
+- 1 Kilobyte = 1.024 bytes
+- 1 Megabyte = 1.024 kilobytes (1.048.575 bytes)
+- Terminal = zona in care trimitem instructiuni catre program (altele decat cod python).
+Exemplu: 'python --version'.
+Tot de aici putem instala librarii externe (ex: pip install selenium).
+- Consola = zona in care primim output (raspuns vizual) de la programul rulat.
+- IDE = Integrated Development Environment - Pycharm. Este un editor de cod.
+- Venv = Virtual Environment - zona in care folosim in mod izolat si securizat toate librariile externe.
+
+## 📌 Limbaj compilat vs limbaj interpretat
+- limbaj compilat = transformarea codului din sintaxa citibila in cod citibil de procesor
+    - codul e transformat (compilat) in limbaj masina iar ulterior rulat
+    - limbaj compilat: Java
+- limbaj interpretat = codul e citit la momentul executiei linie cu linie si transformat in cod masina "on the go"
+    - limbaj interpretat: Python
+    - in Python, interpretorul Python citeste codul linie cu linie si il transforma in cod masina in momentul executiei
+
+## 📌 Primul meu program Python
+Afisarea in terminal a mesajului "Hello World".
+
+```python
+print("Hello World")
+```
+
+## 📌 Functia built-in print()
+
+❔ Ce este o functie?
+- O functie este o logica de cod predefinita care face ceva.
+- Are sintaxa **nume_functie()**
+- In paranteza punem datele de intrare/ input (argumente sau parametri)
+- Vom discuta pe larg despre functii in capitolele urmatoare.
+- functiile built-in sunt furnizate de limbajul de programare, ele reprez parte integrata in limbajul de programare
+  -Exemple de functii: print(), type(), input(), int(), str(), bool(), float(), len(), sum(), etc.
+🔸 Functia print() este polimorfica, ea afiseaza in consola ce punem in paranteze.
+
+```pytho
+print("Produsul acesta costa 5 lei.")
+```
+
+```python
+print(3)
+print(3.5)
+
+print("rosu", "galben")
+print("verde", "albastru", sep=",")
+
+print("text1", end="*")
+print("text2", end="*")
+
+print("text3", "text4", sep=",", end="***")
+```
+### ❗ Rularea codului si consola
+- Pentru rularea codului puteM da click dreapta oriunde in fisierul pe care vreti sa il rulati si selectati optiunea Run
+- Rezultatele rularii fisierelor Python le gasim in consola
+- IMPORTANT!! Codul scris trebuie sa respecte anumite “reguli” pe care sistemul le recunoaste, altfel vom primi ceea ce se numeste eroare de sintaxa. Sintaxa reprezinta totalitatea regulilor care definesc limbajul recunoscut de un sistem.
+
+## 📌 Comentarii
+### 🔸 Definitie
+- Comentariile sunt linii de cod care sunt ignorate in timpul rularii unui program.
+
+### 🔸 Tipuri de comentarii
+In Python, comentariile sunt definite folosind semnul '#' la inceputul liniei de cod.
+
+#### *Single-line comments*
+- Exemplu
+```python
+# Acesta este un comentariu pe o singura linie
+```
+
+#### *Multi-line comments*
+- Exemplu 1:
+```python
+# Acesta este un comentariu
+# pe mai multe linii
+```
+
+- Exemplu 2:
+```python
+"""
+Acesta este alt comentariu
+pe mai multe linii
+"""
+```
+
+### 🔸 De ce avem nevoie de comentarii?
+- Documentarea codului
+- Cresterea intelegerii codului
+- Prevenirea executarii uneia sau mai multor linii de cod.
+
+## 📌 Variabile: definitie, de ce avem nevoie de variabile
+### 🔸 Definitie
+- O variabila este un container(adresa) din memorie care stocheaza valori.
+- Va puteti imagina o casa care se afla la o anumita adresa si contine mobila.
+
+
+```python
+# declaram si initializam 2 variabile
+marca_masina = 'Volvo'
+model_masina = 'XC 60'
+```
+### ❗ De retinut
+- Variabilele au un nume unic, ca sa poata fi identificate si folosite anterior.
+- Variabila este creata in momentul in care ii atribuim o valoare.
+- NU putem pune spatiu in numele unei variabile.
+- Variabilele incep cu litera mica dar pot contine cifre (user1) si simbolul _.
+- Variabilele sunt CASE-SENSITIVE (my_var = 5 e diferita de my_Var = 5).
+- Variabilele pot sa isi schimbe valoarea pe parcursul executiei programului (suprascriere).
+- Variabilele pot sa isi schimbe tipul de date pe parcursul executiei.
+- Putem atribui mai multe valori in one line, sau aceeasi valoare mai multor variabile.
+
+```python
+x, y, z = "Orange", "Banana", "Cherry"
+a = b = c = "Apple"
+```
+- Procesul de alocare de memorie pentru o variabila se numeste declarare, iar salvarea unei valori la acea adresa de memorie se numeste initializare. In Python declararea nu e posibila fara initializare
+
+## 📌 Constantele: definitie si exemplu
+### 🔸 Definitie
+- Constantele sunt adrese din memorie care nu isi pot schimba valoarea pe parcursul executiei programului.
+- constantele trebuie scrise cu litere mari.
+- IMPORTANT!! In Python conceptul de constanta nu exista decat ca si conventie de scriere, daca vom incerca sa actualizam o valoare dintr-o constanta nu va returna eroare. Acest lucru nu se intampla in alte limbaje de programare.
+```python
+# exemplu de definire a constantelor
+SUNT_INSCRIS_LA_CURS = True
+```
+
+### ❗ De retinut
+- Se numeste constanta deoarece valoarea adresei de memorie NU poate sa varieze pe parcursul executiei programului (este constanta)
+- Caracteristica principala a constantei este faptul ca nu isi poate schimba valoarea, drept urmare atunci cand definim o constanta este important sa nu uitam de aceasta, care e de fapt cea care descrie conceptul de constanta
+- Cand vorbim despre o constanta vorbim despre o adresa de memorie, nu despre valoarea in acea adresa de memorie. Deci atunci cand definim o constanta nu spunem ca este o valoare, ci o adresa de memorie care stocheaza o valoare
+
+## 📌 Tipuri de date: string, int, float, bool
+- Datele/valorile salvate in variabile pot avea mai multe tipuri
+- Exista mai multe tipuri de date dar cele mai importante/folosite sunt:
+1. int = numar intreg
+```python
+# initializam o variabila de tip int/numar intreg
+cantitate = 10
+```
+2. float = numar zecimal
+```python
+# initializam o variabila de tip float/numar zecimal
+pret = 10.45
+```
+3. bool = adevarat/fals
+```python
+# initializam variabile de tip boolean
+este_impar = False
+este_par = True
+```
+4. string = sir de caractere de la tastatura delimitate de '  ' sau "  "
+```python
+# definim o variabila string folosind ghilimele simple
+nume = 'Popa'
+
+# definim o variabila string folosind ghilimele duble
+prenume = "Maria"
+```
+
+```python
+"""
+EX1:
+a. Defineste o variabila de tip int, numita 'latime'.
+b. Defineste o variabila de tip string, numita 'descriere'.
+c. Defineste 2 variabile de tip float, numite 'pret' si 'discount'.
+d. Defineste o variabila de tip bool, numita 'initializat' care are valoarea True.
+e. Printeaza variabilele definite la punctele anterioare.
+"""
+```
+
+```python
+"""
+EX2: Folosind o singura linie de cod, defineste 2 variabile, de tip int, cu valoarea 10.
+"""
+```
+
+```python
+"""
+EX3: Folosind o singura linie de cod, initializeaza/ defineste doua variabile de tip string cu valori diferite.
+"""
+```
+
+📌 Concatenarea string-urilor
+- Putem concatena string-uri in doua moduri:
+    - cu semnul "+"
+    - folosind f-strings
+
+```python
+nume = 'Popescu'
+print(nume)
+
+prenume = 'Carmen'
+print(prenume)
+
+nume_complet = nume + prenume
+print(nume_complet)
+print('Numele meu este ' + nume + prenume)
+
+varsta = 20
+# print("Varsta mea este de:" + varsta) # da eroare
+print(f"Varsta mea este de: {varsta}")
+print("Varsta mea este de: ", varsta)
+```
+
+```python
+"""
+EX4: Defineste doua variabile de tip string, numite 'nume', respectiv 'pret'.
+Afiseaza in consola un mesaj care sa contina cele doua variabile.
+"""
+```
+
+```python
+"""
+EX5:
+a. Defineste doua variabile: nume (string) si varsta (int).
+b. Folosind f-string, afiseaza in consola, o propozitie care sa contina cele doua variabile.
+"""
+```
+
+## 📌 Functia built-in type()
+- Functia type ne expune tipul de date al variabilei date ca input.
+
+```python
+# definim o variabila string
+culoare = 'rosu'
+# afisam in consola tipul variabilei culoare
+print(type(culoare)) # <class 'str'>
+```
+
+- Convertirea tipurilor de variabile - type casting
+```python
+numar1 = 10
+numar2 = '10'
+
+# Sunt numar1 si numar2 de acelasi tip?
+```
+Functiile int(), str(), bool(), float() schimba tipul de date.
+
+```python
+"""
+EX6:
+a. Defineste o variabila de tip int, afiseaz-o in consola. Afiseaza de asemenea si tipul acesteia.
+b. Defineste o variabila de tip float, afiseaz-o in consola. Afiseaza de asemenea si tipul acesteia.
+c. Defineste o variabila de tip string, afiseaz-o in consola. Afiseaza de asemenea si tipul acesteia.
+d. Defineste o variabila de tip bool, afiseaz-o in consola. Afiseaza de asemenea si tipul acesteia.
+"""
+```
+
+```python
+"""
+EX7:
+a. Defineste o variabila de tip int. Afiseaz-o in consola.
+b. Afiseaza in consola tipul variabilei definite la punctul a, folosind functia type().
+c. Converteste variabila de tip int de la punctul a, la tipul float si salveaza rezultatul intr-o alta variabila.
+d. Afiseaza in consola tipul variabilei generate la punctul c.
+"""
+```
+
+```python
+"""
+EX8:
+a. Defineste o variabila de tip string. Afiseaz-o in consola.
+b. Afiseaza in consola tipul variabilei definite la punctul a, folosind functia type().
+c. Converteste variabila de la punctul a, in int si salveaza rezultatul intr-o noua variabila.
+Ruleaza programul.
+Ce observi?
+"""
+```
+
+
+## 📌 Functia built-in input()
+- Functia input() ne ajuta sa luam date de la tastatura si sa le salvam intr-o variabila.
+- Daca nu facem type casting, default-ul datelor furnizate de utilizator for fi te tip string.
+- Ulterior putem accesa valorile salvate in variabile dupa necesitate.
+
+```python
+nume = input('Cum te numesti? ') # default - string
+varsta = int(input('Cati ani ai? ')) # fortam varsta sa fie un int
+```
+
+```python
+"""
+EX9: Citeste de la tastatura un nume de produs.
+Salveaza rezultatul intr-o variabila.
+Afiseaza un mesaj care sa contina variabila salvata.
+"""
+```
+
+```python
+"""
+EX10: Citeste de la tastatura un pret. Obliga utilizatorul sa introduca pretul ca si numar zecimal.
+Salveaza rezultatul intr-o variabila.
+Afiseaza un mesaj care sa contina variabila salvata.
+"""
+```
+
+
+# Curs: String Slicing, metode string, Operatori, conditionale si Assert
+## 📝 OBIECTIVE
+1. String slicing - sa intelegem ce este și cum se face
+2. String Methods - sa stim sa lucram cu ele
+3. Tipuri de Operatori
+Sa cunoastem tipurile principale de operatori
+- De atribuire
+- Artimetici
+- De comparare
+- Logici
+4. Conditionalul if else (flow control)
+Sa intelegem cum functioneaza if statement
+- If simplu
+- If/else
+- If/elif/else
+
+## 📌 String slicing
+- Putem accesa "felii" din string, folosind sintaxa
+**my_str[start_pos:end_pos:pas]**
+- Practic, extragem o parte dintr-un string, specificand indexul de la care sa pornim
+si indexul final.
+- start_pos = indexul de inceput (inclusiv); daca lipseste, este inceputul
+string-ului (0)
+- end_pos = indexul de final (EXCLUSIV)
+- ❗ ATENTIE: Caracterul de la indexul final nu se va lua in considerare.
+Practic vom extrage un string care va include ca ultimul caracter, cel aflat la **end_pos** - 1.
+- pas = este optional - pasul cu care se merge; daca lipseste, valoarea lui
+este 1
+- daca pasul este negativ, se merge invers (de la final la inceput)
+```python
+info = 'Afara sunt 2 grade'
+
+# Extragem string-ul care incepe cu index-ul 0 pana la index-ul 1, inclusiv
+print(info[0:2]) # => 'Af'
+
+# Extragem string-ul care incepe cu index-ul 0 pana la indexul 4, inclusiv
+print(info[0:5]) # => 'Afara'
+
+# Daca nu specificam end_pos, se va extrage string-ul
+# pana la ultimul caracter, inclusiv
+print(info[6:])  # => 'sunt 2 grade'
+
+# Daca nu specificam start_pos, se va extrage string-ul
+# incepand cu primul caracter.
+print(info[:5])  # => 'Afara'
+
+## Inversare string
+print(info[::-1]) # => 'edarg 2 tnus arafA'
+```
+
+```python
+"""
+EX1: Se da string-ul prop3 = 'Concertul va avea loc maine."
+a. Salveaza intr-o variabila, folosind slicing, primul cuvant.
+b. Extrage primele 3 caractere din prop3.
+c. Afiseaza prop3 cu caracterele inversate.
+"""
+```
+## 📌 Tipul string - metode disponibile
+
+### 🔸 Index(pozitie)
+- String-ul este format din unul sau mai multe caractere.
+- Fiecare caracter dintr-un string are un numar asociat/pozitie asociata, numit index.
+- ❗ ATENTIE: indexul incepe de la 0.
+- Exemplu:
+```python
+info = 'Afara sunt 2 grade'
+print(info[0]) # => 'A' (primul caracter din string se afla la indexul 0)
+print(info[1]) # => 'f'
+print(info[5]) # => ' ' (la indexul 5 avem un spatiu gol)
+```
+- Cum aflam ce caracter avem la ultima pozitie din string?
+```python
+info = 'Afara sunt 2 grade'
+# prima varianta - e o modalitate dar NU e indicata - DE CE?
+print(info[17]) # => e
+
+# a doua varianta (PREFERATA)
+print(info[-1]) # => e
+```
+
+```python
+"""
+EX2: Se da variabila prop1 = 'Andy este prescurtarea de la Andrei"
+a. Afiseaza primul caracter.
+b. Afiseaza al 4-lea caracter.
+c. Afiseaza ultimul caracter.
+"""
+```
+
+### 🔸 Lungimea unui string
+- Functia len() ne spune cate caractere are string-ul.
+```python
+info = 'Afara sunt 2 grade'
+
+# afisam lungimea string-ului info
+print(len(info)) # => 18
+```
+
+```python
+"""
+EX3: Se da string-ul prop2 = 'Masina e rosie.'
+Afiseaza lungimea string-ului prop2.
+"""
+```
+
+
+### 🔸 Metode ajutatoare string
+- Daca dupa my_str punem. ajungem la functiile ajutatoare.
+- Exemple: upper, lower, replace, count etc.
+- Accesam descrierea acestora apasand CTRL + Click pe numele lor
+
+```python
+str1 = 'banana'
+print(str1.upper()) # => 'BANANA' (tot cu litere mari)
+```
+
+```python
+"""
+EX4: Se da string-ul my_str = 'vacanta'.
+a. Foloseste metoda find() pentru a afla primul index la care se gaseste caracterul 'a'.
+b. Foloseste metoda count() pentru a afla de cate ori apare caracterul 'a' in my_str.
+c. Foloseste metoda capitalize() pentru a scrie cuvantul cu prima litera mare.
+d. Foloseste metoda upper() pentru a scrie cuvantul cu litere mari.
+"""
+```
+
+```python
+"""
+EX5: Exploreaza urmatoarele metode ajutatoare ale string-ului:
+a. endswith()
+b. index()
+c. lower()
+d. replace()
+e. strip()
+"""
+```
+
+
+
+## 📌 Operatori aritmetici
+
+| Operator | Name           | Example |
+|----------|----------------|---------|
+| +        | Addition       | x + y   |
+| -        | Substraction   | x - y   |
+| *        | Multiplication | x * y   |
+| /        | Division       | x / y   |
+| %        | Modulus        | x % y   |
+| **       | Exponentiation | x ** y  |
+| //       | Floor division | x // 2  |
+
+```python
+x = 2
+y = 3
+
+# # adunarea
+print(x + y) # 5
+# # scaderea
+print(y - x) # 1
+# # inmultirea
+print(x * y) # 6
+# # impartirea
+print(y / x) # 1.5
+# # restul impartirii
+print(y % x) # 1
+# # ridicarea la putere
+print(x ** y) # 2 la puterea 3 -> 8
+# # floor division
+print(y // x) # 3 // 2; 1.5 => 1
+
+# inmultirea pe string-uri
+my_str = 'a'
+
+# vreau sa afisez mesajul 'aaa'
+print(my_str + my_str + my_str)
+print(my_str * 3)
+```
+
+### 🔸 Floor division: // operator
+- Rotunjeste rezultatul fata de cel mai apropiat intreg
+
+```python
+x = 17
+y = 2
+
+# daca ambele numere sunt int -> rezultatul va fi int
+print (x // y) # 8.5 -> rezultatul este 8
+
+x = 17.8
+y = 2
+
+# daca cel putin unul din numere este float -> rezultatul va fi float
+print(x // y) # 8.9 -> rezultatul este 8.0
+
+
+x = -17
+y = 2
+print(x // y) # -8.5 -> rezultatul este -9
+```
+
+```python
+"""
+EX6: Se dau doua variabile, a = 10, b = 2.
+Efectueaza toate operatiile pe cele 2 variabile,
+folosind operatorii aritmetici.
+"""
+```
+
+#### ❔ Pe ce principiu se rotunjeste?
+Intregul catre care se orienteaza trebuie sa indeplineasca urmatoarea conditie: Rezultat rotunjit <= intregul rezultatului
+
+## 📌 Operatori de atribuire
+| Operator | Example | Same as   |
+|----------|---------|-----------|
+| =        | x = 5   | x = 5     |
+| +=       | x += 3  | x = x + 3 |
+| -=       | x -= 3  | x = x - 3 |
+| *=       | x *= 3  | x = x * 3 |
+| /=       | x /= 3  | x = x / 3 |
+
+
+## 📌 Operatori logici
+
+| Operator | Description                                            | Example               |
+|----------|--------------------------------------------------------|-----------------------|
+| and      | Returns True if both statements are true               | x < 5 and x < 10      |
+| or       | Returns True if one of the statements is true          | x < 5 or x < 4        |
+| not      | reverse the result, return False if the result is True | not(x < 5 and x < 10) |
+
+```python
+"""
+EX7: Pentru fiecare din exemplele de mai jos, scrie intr-un comentariu
+rezultatul asteptat, apoi decomenteaza codul de la fiecare exemplu, pe rand
+si ruleaza exemplele si verifica output-ul.
+"""
+
+# Exemplul 1:
+a = True
+b = False
+# print(not(a))
+# print(not(b))
+
+# Exemplul 2:
+a = True
+b = False
+# x = not(a)
+# y = not(b)
+# print(a or b)
+# print(x or y)
+# print(a or x)
+# print(x or b)
+
+# Exemplul 3:
+a = False
+b = False
+# x = not(a)
+# y = not(b)
+# print(a and b)
+# print(a and x)
+# print(y and b)
+# print(x and y)
+```
+
+## 📌 Operatori de comparare
+
+| Operator | Name                       | Example |
+|----------|----------------------------|---------|
+| ==       | Equal                      | x == y  |
+| !=       | Not equal                  | x != y  |
+| &gt;     | Greater than               | x > y   |
+| &lt;     | Less than                  | x < y   |
+| &gt;=    | Greater than or equal than | x >= y  |
+| <=       | Less than or equal to      | x <= y  |
+
+```python
+"""
+EX8: Se da variabila num = 12
+a. Verifica daca num citit este pozitiv.
+b. verifica daca num este mai mare decat 5.
+verifica daca num este mai mic decat 25.
+c. verifica daca num este intre 0 si 20.
+"""
+```
+
+## 📌 If...
+- If este o declaratie/ un statement in cod prin care ghidam programul nostru sa execute o bucata de cod in functie de un criteriu/o conditie.
+- Codul se executa doar daca conditia data la if este evaluata ca True/Adevarata.
+- In engleza acest principiu se numeste ‘flow control’ - controlam pe unde curge codul.
+- Un if simplu e ca o usa: daca usa e deschisa (true), se va executa codul din spate. Daca usa (conditia) e inchisa (false), python nu va afla ce e in spatele usii. Pentru Python, acea zona de cod e inaccesibila, nu exista.
+- Cum definim un if?
+```python
+x = 5
+if x == 5:
+    print("x este egal cu 5") # indentare cod
+```
+
+- Dupa cele : ale unei ramuri, cand apasam ‘Enter’ se vor pune automat 4 spatii sau un TAB
+- Acest lucru se numeste indentare. Indentarea are scopul de a-i transmite la python de unde pana unde tine blocul de cod corespunzator acelei conditii. (Sau altfel spus, marcheaza peretii camerei din spatele usii)
+
+```python
+nota_de_trecere = 4.5
+nota = float(input('alege nota'))
+if nota >= nota_de_trecere:
+    print(f'Ai luat nota {nota}')
+    print('Felicitari, ai trecut examenul!')
+```
+
+- E ok logica codului?
+
+```python
+"""
+EX9: Verifica daca varsta introdusa de utilizator este mai mare
+decat 18 ani.
+"""
+```
+
+```python
+"""
+EX10: Verifica daca pretul introdus de utilizator este mai mic sau egal cu 100 de dolari.
+"""
+```
+
+
+## 📌 If...else
+- Daca conditia scrisa la if nu se indeplineste (este evaluata ca fiind False), vrem sa spunem programului ce sa faca.
+- Are tot timpul fix 2 ramuri
+- If are conditie urmata de :
+- Else nu mai are nevoie de conditie.
+- Ex: Un numar daca nu e par, e automat impar
+
+```python
+# constanta = are o valoare stabila, nu ne dorim sa o schimbe nimeni
+# standardul este sa o scriem cu litere mari
+NOTA_DE_TRECERE = 4.5
+nota = float(input('Alege nota'))
+if nota >= NOTA_DE_TRECERE:
+    print(f'Ai luat nota {nota}')
+    print('Felicitari ai trecut examenul')
+else:
+    print(f'Ai luat doar nota {nota}')
+    print('Ne vedem la vara! Ai picat examenul')
+```
+
+```python
+"""
+EX11:
+a. Citeste un numar de la tastatura.
+b. Verifica daca numarul este par sau impar si afiseaza un mesaj sugestiv
+# in fiecare situatie.
+"""
+```
+
+```python
+"""
+EX12:
+a. Citeste de la tastatura viteza medie cu care conduce utilizatorul.
+b. Daca viteza este sub 50 sau egala cu 50, afiseaza mesajul "Viteza normala".
+c. Daca viteza este mai mare de 50, afiseaza mesajul "Viteza depasita".
+"""
+```
+
+## 📌 If...else if ... else
+- Se foloseste cand avem mai mult de 2 situatii posibile
+- Conditiile se evalueaza de sus in jos
+- Se executa codul aferent primei conditii adevarate
+- Dupa ce s-a gasit un true, nu se mai verifica ce a mai ramas mai jos
+
+```python
+# robotelul telefonic
+optiune = int(input('alege o optiune'))
+if optiune == 0:
+    print('meniul anterior')
+elif optiune == 1:
+    print('ati ales ro')
+elif optiune == 2:
+    print('ati ales eng')
+else:
+    print('Nu am identificat optiunea, mai incearca.')
+```
+
+- Un singur if la inceput
+- Oricate elif-uri sunt necesare
+- Un singur else la final
+- Daca nu gaseste nici un true mai sus, else se va executa automat (e ca un default)
+
+```python
+"""
+EX13: Citeste de la tastatura varsta utilizatorului si afiseaza categoria
+de varsta in care se incadreaza.
+Tine cont de aceste categorii de varsta:
+- intre 0-18 ani: minor
+- intre 18-65 ani: adult
+- peste 65 ani: senior
+"""
+```
+
+```python
+"""
+EX14: Saptamana aceasta, supermarket-ul X ofera clientilor o reducere la intreg
+cosul de cumparaturi, in functie de totalul cosului de cumparaturi
+Reducerea se aplica in felul urmator:
+- Total este intre 100 si 200 lei -> reducere 10%
+- Total intre 200 - 300 lei -> reducere 15%
+- Total intre 300-400 -> reducere 20 %
+- Total mai mare de 400 -> reducere 30 %.
+a. Citeste de la tastatura totalul cosului de cumparaturi al utilizatorului.
+b. Afiseaza pretul pe care utilizatorul trebuie sa il plateasca pe cumparaturi
+dupa aplicarea reducerii.
+"""
+```
+
+
+
+# Curs: Structuri de date
+## 📝 OBIECTIVE
+1. Recapitulare Sesiunea1 si Sesiunea2
+2. Structuri de date: liste, dictionare, seturi, tupluri
+
+
+## Recapitulare Sesiunea1 si Sesiunea2
+1. Cum putem sa luam datele introduse de utilizator de la tastatura?
+2. Ce este un index in string?
+3. Cum aflam lungimea unui string?
+4. Ce inseamna slicing (string)?
+5. Ce metode ajutatoare pentru variabile de tip string cunosti? (min 2)
+6. Tipuri de Operatori: aritmetici, de atribuire, de comparare, logici
+```python
+"""
+Se dau doua variabile, x = 10, z = 2.
+Efectueaza toate operatiile pe cele 2 variabile,
+folosind operatorii aritmetici.
+"""
+```
+7. Conditia IF
+
+## 📌 Lista
+- Lista este o colectie de elemente.
+- Pastreaza mai multe valori intr-o singura variabila.
+- Se defineste in Python folosind [], iar elementele sunt separate prin virgula.
+- In Python, putem pastra diferite tipuri de date in aceeasi lista.
+
+```python
+list1 = ["abc", 34, True, 40, "male", "male"]
+```
+
+- Lista este **ORDONATA/ORDERED** (elementele sunt pastrate in ordinea in care au fost adaugate).
+
+```python
+# Exemplu de listă ordonată de numere întregi
+numbers = [1, 2, 3, 4, 5]
+print(numbers)
+# Output: [1, 2, 3, 4, 5]
+```
+- Fiecare element din lista, are **INDEX**, incepand de la 0 (ca si string-ul)
+- Lista este **MUTABILA/MUTABLE** (elementele sale pot fi modificate, adaugate sau sterse).
+
+```python
+# Exemplu de modificare a unui element dintr-o listă
+numbers = [1, 2, 3, 4, 5]
+numbers[2] = 7
+print(numbers)
+# Output: [1, 2, 7, 4, 5]
+```
+
+- In lista putem pune **VALORI DUPLICATE**
+- len() ne va da dimensiunea listei (Cate elemente avem in lista?)
+
+Alte exemple:
+
+```python
+lista_cumparaturi = ['rosii', 'paine', 'lapte']
+print(type(lista_cumparaturi))
+print(len(lista_cumparaturi))
+print(lista_cumparaturi[0])
+culori_preferate = ['rosu', 'galben', 'mov']
+contacte = ['0722345678', '0721549888', '0765332967']
+```
+
+```python
+list1 = ["abc", 34, True, 40, "male", "male"]
+print(list1)
+print(list1[0])
+print(len[list1])
+```
+
+- Cum adaugam elemente noi in lista?
+```python
+cifre = [0, 6, 3, 4, 1, 2, 5, 7, 8]
+
+# adaugam cifra 9 in lista cifre la finalul listei
+cifre.append(9)
+print(cifre)
+
+# adaugam 9 in lista cifre la indexul 2
+cifre.insert(2, 9)
+print(cifre)
+```
+
+- Cum stergem un element din lista?
+
+```python
+cifre = [0, 6, 3, 4, 1, 2, 5, 7, 8]
+
+# stergem ultimul element din lista
+cifre.pop()
+print(cifre)
+
+# stergem elementul de la indexul 1 in lista cifre
+element_sters = cifre.pop(1)
+print(element_sters)
+print(cifre)
+
+# stergem prima aparitie a unui element in lista
+# dupa valoare
+cifre.remove(3)
+print(cifre)
+```
+
+```python
+"""
+EX1:
+a. Defineste o lista cu 3 elemente.
+b. Este lista o structura de date ordonata? De ce da/nu?
+c. Acceseaza al doilea element din lista si afiseaza-l.
+d. Afiseaza lungimea listei.
+"""
+```
+
+```python
+"""
+EX2:
+a. Defineste o lista numita filme_preferate, cu cel putin 3 elemente.
+b. Inverseaza lista folosind slicing. (ca la string)
+c. Folosind if, verifica daca lista este goala sau nu,
+si afiseaza un mesaj corespunzator pentru fiecare situatie.
+"""
+```
+
+```python
+"""
+EX3: Se da structura de date cifre = [0, 6, 3, 4, 1, 2, 5, 7, 8].
+a. Verifica tipul structurii de date dat.
+b. Accesand metodele de pe lista, sorteaza lista cifre.
+c. Verifica daca 9 este in lista cifre. Afiseaza un mesaj corespunzator.
+"""
+```
+
+```python
+"""
+EX4: Defineste o lista si exploreaza metodele ajutatoare ale listelor.
+"""
+```
+
+## 📌 Set
+
+- Set-urile pastreaza elemente **UNICE**.
+- Seturile se definesc folosind {} si elementele sale sunt separate prin virgula.
+
+- Set-urile sunt **NEORDONATE/UNORDERED** (elementele nu sunt pastrate in ordinea in care au fost adaugate si nu pot fi accesate dupa index.)
+
+```python
+# Exemplu de set neordonat
+fruits = {"apple", "banana", "orange", "grape"}
+print(fruits)
+# Output: {'banana', 'apple', 'orange', 'grape'}
+```
+
+- Set-urile sunt MUTABILE/MUTABLE, pentru ca putem adauga si sterge elemente.
+- Elementele din set sunt immutable.
+
+```python
+fruits = {"apple", "banana", "orange", "grape"}
+
+# ADAUGAREA unui element in set
+
+# adaugarea unui element care nu exista in set
+# in momentul adaugarii
+fruits.add("watermelon")
+print(fruits)
+
+# adaugarea unui element care exista in set
+# in momentul adaugarii
+fruits.add("apple")
+print(fruits)
+
+# STERGEREA elementelor dintr-un set
+
+# stergerea unui element specific
+fruits.remove("apple")
+print(fruits)
+
+# stergerea unui element aleator
+fruits.pop()
+print(fruits)
+
+# Putem adauga elemente MUTABILE intr-un set?
+# fruits.add([1, 2]) # da eroare
+```
+
+- Putem folosi len() pentru a afla dimensiunea set-ului
+
+```python
+culori = {'alb', 'rosu', 'galben'}
+print(culori)
+print(len(culori))
+```
+
+```python
+"""
+EX5: Se da setul: my_set = {1, 2, 3, 4}.
+a. Adauga nr 5 in set.
+b. Adauga nr 6 in set.
+c. Adauga nr 1 in set. Ce observi?
+d. Sterge un element din set folosind metoda remove().
+e. Sterge un element din set folosind metoda pop().
+"""
+```
+
+## 📌 Tuplu
+
+- Pastreaza mai multe valori imutabile intr-o singura variabila.
+- Se definesc folosind () si punem virgula intre elemente.
+- TUPLU-urile sunt **ORDONATE/ORDERED** (elementele sunt pastrate in ordinea in care au fost adaugate si pot fi accesate dupa index.)
+- TUPLU-urile sunt **IMUTABILE/IMMUTABLE** (elementele sale NU pot fi modificate, adaugate sau sterse).
+- Accepta valori duplicate.
+- Putem folosi len() pentru a afla dimensiunea
+
+```python
+my_tuple = ("apple", "banana", "cherry")
+print(my_tuple)
+print(len(my_tuple))
+```
+
+```python
+"""
+EX6:
+Se da urmatoarea structura de date:
+locatie = (44.34, 12.456)
+a. Verifica tipul structurii de date
+b. Este aceasta structura de date ordonata?
+c. Este aceasta structura de date mutabila?
+d. Determina lungimea structurii de date.
+e. Salveaza a doua valoare intr-o variabila.
+Verifica daca aceasta este mai mare de 13, si afiseaza
+un mesaj corespunzator.
+"""
+```
+
+## 📌 Dictionar
+- Un dictionar este o colectie de perechi cheie:valoare.
+- Se defineste folosind {} si are structura generala {key1:val1, key2:val2}
+
+```python
+my_dict = {
+    'nume_produs': 'produs_1',
+    'pret': 23.00,
+    'in_stoc': False
+}
+```
+
+- Dictionarul este **NEORDONAT/UNORDERED** (elementele nu sunt pastrate in ordinea in care au fost adaugate.)
+- Dictionarul este **MUTABIL/MUTABLE** (elementele sale pot fi modificate, adaugate sau sterse).
+
+
+- Cheile sunt **unice**, nu putem avea chei duplicate, ar crea confuzie.
+- Ne gandim ca folosim nume pt un index.
+- Putem folosi len() pentru a afla dimensiunea.
+
+
+```python
+my_dict = {
+    "brand" : "Volvo",
+    "model": "XC 60",
+    "year": 2011
+}
+
+print(my_dict)
+print(my_dict['brand'])
+print(len(my_dict))
+```
+
+- Cum accesam elementele dintr-un dictionar?
+
+```python
+contacte = {
+    'Ana': '0722345678',
+    'Marius': '0721549888',
+    'Maria': '0765332967'
+}
+
+# dorim sa accesam numarul lui Marius
+print(contacte['Marius'])
+
+# dorim sa accesam numarul lui Alin
+print(contacte['Alin']) # -> eroare: KeyError
+print(contacte.get('Alin', 0))
+```
+
+```python
+person = {
+    "name": "John",
+    "age": 30,
+    "city": ["New York", "Los Angeles"],
+    "occupation": "teacher"
+}
+
+# ADAUGAREA unui element nou in dictionar
+# v1
+person['salary'] = 3000.00
+print(person)
+
+# v2
+person.update({"has_car": True})
+
+# MODIFICAREA unui element in dictionar
+# v1
+person['age'] = 31
+print(person)
+
+# v2
+person.update({"age": 32})
+
+# STERGEREA unui element din dictionar
+# v1
+del person['city']
+# del person['city'], person['salary'] # stergem mai multe key:value deodata
+print(person)
+
+# v2
+# stergerea unui perechi cheie:valoare dupa cheie
+person.pop("name")
+print(person)
+```
+
+```python
+"""
+EX7:
+a. Defineste un dictionar, numit student1, cu urmatoarele chei:
+nume, prenume, varsta, an_studiu, facultate, medie.
+Valorile le alegi tu.
+b. Afiseaza lungimea dictionarului.
+c. Printeaza prenumele studentului.
+d. Adauga o noua pereche cheie-valoare, cu tara in care studiaza studentul.
+e. Verifica daca dictionarul contine cheia oras.
+"""
+```
+
+```python
+"""
+EX8:
+a. Citeste de la tastatura urmatoarele date legate de o noua reteta: nume,
+ingrediente, timp prepapare.
+b. Salveaza datele citite intr-un dictionar.
+c. Actualizeaza numele retetei, scriind-ul cu litere mari.
+"""
+```
+
+```python
+"""
+EX9:
+a. Se da un dictionar cu contacte din agenda telefonica:
+contacte = {'Maria': '0722898956', 'Aurel': '0755342298'}
+b. Aurel si-a schimbat numarul de telefon. Actualizeaza-l.
+c. Ai obtinut numarul de telefon a lui Mihai. Adauga-l in contacte.
+d. Maria a plecat in strainatate si nu mai are numar de telefon. Sterge-l.
+e. Verifica daca ai numarul Mihaelei si afiseaza un mesaj corespunzator.
+"""
+
+
+# Curs:Cicluri repetitive - Seturi, Tupluri, Cicluri repetitive
+
+## 📝 OBIECTIVE
+1. Recapitulare
+2. While
+3. For each
+4. For
+5. Controlul iteratiilor cu break si continue
+
+
+## 📑 Recapitulare
+1. Ce sunt listele? Cum se definesc in Python?
+2. Putem avea in liste elemente care au tipuri diferite de date?
+3. Sunt listele ordonate sau neordonate?
+4. Cum inversam o lista?
+5. Cum accesam un element dintr-o lista?
+6. Ce metode ajutatoare folosite pe liste cunosti (min 3)?
+7. Sunt listele mutabile sau imutabile?
+8. Ce sunt dictionarele?
+9. Cum se definesc dictionarele in Python?
+10. Sunt dictionarele ordonate sau neordonate?
+11. Cum accesam elementele/valorile dintr-un dictionar? (2 variante)
+12. Sunt dictionarele mutabile sau imutabile? Explica de ce.
+
+## 📌 CICLURI REPETITIVE
+
+- ciclu repetitiv = proces prin care se executa un bloc de cod
+de mai multe ori
+
+## 📌 WHILE/WHILE ELSE
+- Ciclul repetitiv while ne ajuta sa executam un bloc de cod
+atat timp cat o conditie este adevarata.
+
+```python
+"""
+#sintaxa while
+while conditie_adevarata: # conditia se evalueaza ca True sau False
+    # bloc de instructiuni care se executa atata timp
+    # cat conditia <conditie_adevarata> ramane adevarata
+    # de exemplu:
+    print("Hello")
+    x = 2
+    y = 2 * x
+    # OBLIGATORIU: cod care schimba valoarea de adevar
+    # a conditiei trecute la while, astfel incat
+    # sa nu se execute codul la infinit!
+"""
+```
+
+```python
+# Exemplul 1 - Afisarea numerelor de la 0 la 3
+i = 0
+
+while i <= 3:
+    print(i)
+    i += 1
+```
+
+```python
+# Exemplul 2 - Afisarea numerelor pozitive
+x = 8
+while x > 0:
+    print(f"Numarul {x} este pozitiv")
+    x -= 1
+print("S-a iesit din while")
+print(f"Dupa while, x are valoarea {x}")
+```
+
+```python
+# Exemplul 3 - validarea credentialelor de conectare
+username = input("Introduceti numele de utilizator: ")
+password = input("Introduceti parola: ")
+
+while len(username) < 6 and len(password) < 6:
+    print("Usernamel-ul si parola trebuie sa aiba min 6 caractere!")
+    username = input("Introduceti numele de utilizator: ")
+    password = input("Introduceti parola: ")
+print("Autentificare reusita")
+```
+
+```python
+# Exemplul 4 - ghicirea unui numar introdus la tastatura
+import random
+
+secret_number = random.randint(1, 10)
+
+guessed = False
+
+while not guessed:
+    guess_number = int(input("Alege un numar de la 1 la 10: "))
+    if guess_number == secret_number:
+        print("Felicitari! Ai ghicit!")
+        guessed = True # conditia de iesire
+    elif guess_number < secret_number:
+        print("Numarul este prea mic. Incercati din nou.")
+    else:
+        print("Numarul este prea mare. Incercati din nou.")
+```
+
+- OPTIONAL: La final, se poate pune un else. Blocul de cod din else
+se va executa mereu 1 data, la final, atata timp cat ciclul repetitiv
+nu este intrerupt intentionat
+
+```python
+# Exemplul 1 - Afisarea cifrelor de la 0 la 3
+i = 0
+
+while i <= 3:
+    print(i)
+    i += 1
+else:
+    print("Am terminat ciclul repetitiv while.")
+```
+
+```python
+# Exemplul 2 - Validarea inputului de la tastatura ca nr pozitiv
+number = int(input("Introduceti un numar intreg pozitiv: "))
+
+while number <= 0:
+    print("Numarul introdus e negativ!")
+    number = int(input("Introduceti un numar intreg pozitiv"))
+else:
+    print("Numarul introdus este pozitiv!")
+```
+
+```python
+# Exemplul 3 - Cautarea unui element intr-o lista
+numbers = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]
+
+search_value = int(input("Ce numar cautati? "))
+
+index = 0
+while index < len(numbers):
+    if numbers[index] == search_value:
+        print(f"Valoarea a fost gasita la indexul: {index}")
+        break
+    index += 1
+else:
+    print("Valoarea nu a fost gasita in lista!")
+```
+
+```python
+"""
+EX1: Se da numarul x = -5.
+Foloseste un while pentru a afisa numerele negative pornind
+de la -5.
+La final, afiseaza un mesaj ca s-au afisat toate numerele
+negative.
+"""
+```
+
+```python
+"""
+EX2: Calcularea mediei
+Ne dorim sa cerem utilizatorului sa introduca notele
+luate la examene.
+Vom lua input-ul de la utilizator, pana
+cand acesta introduce -1.
+In functie de notele luate, trebuie sa calculam media aritmetica
+si sa o afisam.
+"""
+```
+
+## 📌 FOR/FOR ELSE - executam codul de un anumit numar de ori
+- Se executa un bloc de cod pentru fiecare valoare dintr-un range
+- Range este o functie built-in din Python care ne genereaza numere din intervalul dat.
+- Range seamana cu slicing: range(valoare_start, valoare_final, pas)
+- valoare start = de unde incepem (default e 0)
+- valoare final = pana unde iteram (e exclusiv)
+- Optional: pasul
+- OPTIONAL: la final se poate pune un else. Blocul de cod din else se va executa mereu
+1 data, la final.
+
+```python
+# executam functia print de 4 ori
+for i in range(4):
+    # i este o variabila care va reprezenta
+    # pe rand, fiecare valoarea din range(4)
+    # adica 0, 1, 2, 3
+
+    # in loc de i putem pune orice alt nume
+
+    # avem acces la variabila i doar in interiorul for-ului
+    print(i)
+```
+```python
+for i in range(4):
+    print(i)
+else:
+    print("Am terminat.")
+```
+
+```python
+"""
+EX3: Afiseaza toate numerele pare pana la 10.
+"""
+```
+
+```python
+"""
+EX4: Se da lista:
+legume = ['spanac', 'castraveti', 'conopida', 'ardei']
+Afiseaza toate elementele din lista accesandu-le dupa index.
+"""
+```
+
+## 📌 FOR EACH - executam cod pentru fiecare element dintr-o structura de date
+- Se parcurge o colectie de date/ o structura de date
+si se salveaza fiecare element, pe rand, intr-o variabila
+pe care o putem accesa in for
+- La fiecare iteratie, variabila se va suprascrie cu valoarea actuala.
+- Rand pe rand, se vor parcuge toate elementele dintr-o colectie.
+
+```python
+culori = ["rosu", "albastru", "galben", "mov"]
+
+for culoare in culori:
+    print(f"Culoarea mea preferata este {culoare}")
+```
+
+```python
+"""
+EX5:
+2. Se da lista:
+produse = [
+    {
+        'nume produs': 'Rosii',
+        'pret': 5
+    },
+    {
+        'nume produs': 'Paine',
+        'pret': 8
+    },
+    {
+        'nume produs': 'Lapte',
+        'pret': 6
+    },
+    {
+        'nume produs': 'Cafea'
+    }
+]
+Sa se afiseze toate produsele care au pretul mai mare de 5 lei.
+"""
+```
+
+## 📌 BREAK
+- Cuvantul cheie break va opri iteratia
+- Practic se iese automat din loop
+- Nu se mai executa codul de dupa break, din cadrul for/while
+
+```python
+for i in range(1, 50):
+    if i == 3:
+        break
+    print(i)
+```
+
+```python
+"""
+EX6: Sa se afiseze primul numar par din intervalul 1 - 10
+(inclusiv capetele de interval).
+"""
+```
+
+```python
+"""
+EX7:
+Se da lista:
+participanti = ['Maria', 'Ionela', 'Marius', 'Paul']
+Folosind un ciclu repetitiv, cauta daca 'Marius' se afla in lista de participanti.
+Dupa ce l-ai gasit intrerupe ciclul repetitiv.
+"""
+```
+
+## 📌 CONTINUE
+
+- Cuvantul cheie continue va sari peste iteratia actuala
+- E un fel de skip.
+- Se va sari peste blocul de dupa skip, care tine de for/while
+
+```python
+for i in range(5):
+    if i == 3:
+        continue
+    print(i)
+```
+
+```python
+"""
+EX8: 1. Se da lista:
+numere = [1, 2, 3, 4, 5, 6, 7]
+Afiseaza toate elementele din lista numere,
+cu exceptia numerelor 3 si 5
+"""
+```
+
+## 🎓 Intrebari interviu
+1. Cand folosim while si cand folosim for?
+2. Ce este obligatoriu sa avem in interiorului blocului de cod while?
+3. Ce reprezinta functia range?
+4. Cand alegem sa folosim break intr-o structura repetitiva?
+5. Cand alegem sa folosim continue intr-o structura repetitiva?
+6. Ce face else-ul dintr-un for/else si while/else?
+7. Daca avem un while/else, in ce caz nu se va executa codul din else?
+
+
+
+# Curs : Functii si Exceptii
+
+## 📝 OBIECTIVE
+1. Recap: structuri de date, cicluri repetitive
+2. Functii simple
+3. Functii cu parametri
+4. Functii cu return
+5. Functii cu parametri si return
+6. Functii din alte fisiere
+7. Sa stim ce e o exceptie si cum o 'tratam'
+
+## 📌 Functii - introducere
+- **DEFINITIE**: O functie reprezinta un bloc de cod care se executa doar atunci cand este apelata.
+- O functie este reutilizabila, ceea ce inseamna ca o putem folosi
+in codul nostru ori de cate ori vrem, apeland-o.
+Aceasta este si utilitatea ei principala: ne ajuta sa eliminam copierea/duplicarea codului in programul nostru.
+- In Python, avem doua tipuri de functii:
+1. Standard library functions - functii built-in care sunt disponibile
+pentru utilizare (exemple: print, int, sum, max etc.).
+2. User-defined functions - putem sa ne cream propriile functii care
+sa indeplineasca propriile noastre cerinte/necesitati.
+
+## 📌 Functii - sintaxa: Cum definim o functie in Python? Cum o apelam apoi?
+- Sintaxa pentru a declara o functie in Python este urmatoarea:
+```python
+def function_name(parameters):
+    # function body
+```
+- **def** = keyword folosit pentru declararea functiilor
+- **function_name** = numele functiei
+- **parameters** (optionali) = parametri dati la functie, disponibili in interiorul functiei
+- A se observa ca indentarea este importanta si in cazul functiilor!
+- Reguli pentru numele functiei: litere mici, cuvinte separate prin _.
+- Exemplu:
+```python
+# functie simpla -> nu are parametri si nu returneaza nimic
+def first_function():
+    print("Hello World!")
+```
+- Pentru a apela o functie/ pentru a-i activa comportamentul, scriem
+numele functiei urmat de paranteze rotunde.
+
+```python
+first_function()
+```
+- Ce se intampla cand apelam o functie?
+1. Cand o functie este apelata, programul se duce la definitia functiei.
+2. Codul din interiorul functiei se executa.
+3. Programul nostru se continua de la linia de dupa apelarea functiei.
+
+```python
+"""
+EX1: Defineste o functie care printeaza, pe rand,
+primele 10 numere (1, 10).
+"""
+```
+
+## 📌 Ce este un parametru
+- Parametri = datele de intrare (input) intr-o functie.
+- Uneori functia are nevoie de niste date ca sa poata functiona.
+- O functie poate sa aiba oricati parametri.
+- Parametri sunt OPTIONALI.
+- Daca avem mai multi, se despart de ,
+- Practic sunt niste variabile declarate
+dar neinitializate.
+- Cand scriem logica functiei, in interiorul functiei, vom avea acces la
+numele parametrilor, dar nu si la valorile lor.
+- Acesti parametri primesc valori/sunt initializati cand apelam functia.
+- Parametrii exista doar in interiorul functiei in care au fost definiti,
+si singurul loc in care un parametru poate fi definit este in spatiul dintre paranteze
+in def statement.
+- Asignarea valorii unui parametru a unei functii se face in timpul invocarii/apelarii functiei,
+specificand argumentul corespunzator.
+
+### PARAMETRII vs ARGUMENTE
+- Parametrii sunt in interiorul functiilor.
+- Argumentele exista in afara functiilor si sunt purtatorii valorilor
+parametrilor corespunzatori.
+
+```python
+# functie cu parametri care nu returneaza nimic
+
+# functie cu 1 singur argument/parametru
+def print_hi(user):
+    print(f"Hi, {user}")
+
+print_hi('Andy87')
+print_hi('Andrei')
+```
+
+```python
+# functie cu parametri care nu returneaza nimic
+
+# functie cu doi parametri
+def add_numbers(a, b):
+    result = a + b
+    print(f'Sum: {result}')
+
+add_numbers(1, 2)
+add_numbers(3, 4)
+```
+
+- Atentie! Cand definim o functie, trecem unul sau mai multi parametri
+in semnatura sa. Atunci cand apelam functia, acelasi numar de valori (pentru fiecare parametru)
+trebuie scris, altfel obtinem eroare!
+
+```python
+# functie cu parametri care nu returneaza nimic
+
+# functie cu doi parametri
+def add_numbers(a, b):
+    result = a + b
+    print(f'Sum: {result}')
+
+add_numbers(1, 2)
+add_numbers(3, 4)
+
+add_numbers(1) # => EROARE!!
+add_numbers(1, 2, 3) # => EROARE!!
+```
+- Cand apelam functia, putem sa scriem parametrii/argumentele pentru functie si
+mentionand numele parametrilor la care le atribuim valoare.
+
+```python
+def add_numbers(a, b):
+    result = a + b
+    print(f'Sum: {result}')
+
+add_numbers(a=1, b=2)
+add_numbers(a=3, b=4)
+
+```
+
+```python
+"""
+EX2: Scrie o functie care parcurge o lista de numere data si
+afiseaza mesajul 'Este par' pentru numerele pare si
+'Este impar' pentru numere impare.
+Daca in lista se gaseste un element care nu e numar intreg,
+afiseaza un mesaj utilizatorului si apoi sari peste
+elementul respectiv.
+(Foloseste functia built-in isinstance()
+pentru verificare daca elementul curent e int sau nu)
+"""
+```
+
+```python
+"""
+EX3: Scrie o functie care calculeaza patratul unui numar.
+Afiseaza rezultatul.
+"""
+```
+
+```python
+"""
+EX4: Scrie o functie care calculeaza impartirea dintre doua numere.
+Afiseaza rezultatul.
+"""
+```
+
+## 📌 Ce este un return
+- O functie poate sau nu sa returneze o valoare atunci cand este apelata.
+- Altfel spus, folosim return cand functia ne si expune un raspuns (output).
+- Raspunsul/output-ul primit de la o functie apelata se poate salva in variabile.
+- Return e OPTIONAL
+- Se poate returna orice tip de date cunoscut.
+- In general, return e ultimul lucru in functie,
+deoarece aici se iese din functie.
+
+```python
+# functie cu return
+
+def numar_preferat():
+    numar = 7
+    return numar
+```
+- Statement-ul return denota de asemenea si ca excutarea functiei
+s-a oprit. Codul scris dupa return nu se va executa.
+
+```python
+def numar_preferat():
+    numar = 7
+    return numar
+    print(f"{numar}") # !!! NU se va executa niciodata
+```
+
+- In general avem un singur return.
+- Exceptie: cand folosim if else,
+atunci putem avea mai multe,
+dar oricum la rulare se va ajunge doar
+intr-un singur caz
+
+```python
+
+# functie cu parametri si return
+def is_natural(numar):
+    if numar >= 0:
+        return 'numarul este natural'
+    else:
+        return 'numarul nu este natural'
+
+raspuns = is_natural(3)
+print(raspuns)
+```
+
+```python
+"""
+EX5: Scrie o functie care calculeaza inmultirea dintre doua numere.
+Afiseaza rezultatul.
+"""
+```
+
+```python
+"""
+EX6: Rescrie functia de la exercitiul 3,
+astfel incat sa returneze rezultatul.
+"""
+```
+
+```python
+"""
+EX7: Rescrie functia de la exercitiul 4,
+astfel incat sa returneze rezultatul.
+"""
+```
+
+```python
+"""
+EX8: Scrie o functie care ia ca parametru un numar intreg
+si returneaza True daca numarul e par
+si False daca numarul e impar.
+"""
+```
+
+## 📌Functii din alte fisiere
+- Atunci cand scriem un program, foarte des intalnim situatia in care
+ne organizam codul in mai multe fisiere.
+- Daca intr-un fisier am definit o functie si vrem sa invocam acea functie
+in alt fisier, primul pas este sa o facem sa fie disponibila in fisierul
+in care dorim sa o apelam, iar mai apoi o putem apela.
+
+## 📌 Avantajele utilizarii functiilor
+1. Reutilizarea codului
+- Putem folosi acelasi functie de mai multe ori in programul nostru,
+ceea ce face functia reutilizabila.
+- Exemplu:
+```python
+def get_square(num):
+    return num * num
+
+for i in [1, 2, 3]:
+    result = get_square(i)
+    print(f'Square of {i} is {result}.')
+```
+2. Intelegerea si structurarea codului
+- Functiile pot fi utilizate pentru a structura programul in blocuri
+logice de cod mai mici, mai usor de gestionat. Acestea pot face codul mai clar
+si mai usor de inteles.
+
+## 📌 Exceptii in Python
+
+- Exista situatii in care codul nu poate fi executat/apar erori.
+- In aceste cazuri, codul 'arunca' o exceptie.
+
+```python
+# Exemplul 1:
+x = 5 / 0  # ZeroDivisionError
+
+# Exemplul 2:
+my_dict = {'pret': 25.00, 'nume': 'perna'}
+print(my_dict['culoare']) # KeyError
+```
+
+- Programatorii se pot astepta la ea, pot sa o 'prinda' si sa o 'trateze'
+- In acest sens, putem anticipa erori si evitam sa 'crape' aplicatia
+- Se foloseste sintaxa try/except
+- else si finally sunt optionali
+
+```python
+try:
+    # execute/run this code
+    x = 5 / 0
+except ZeroDivisionError:
+    # execute this block when exception occured
+    print("Can not divide by zero!")
+else:
+    # execute this block if no exception occured
+    print("Yeah! Your answer is: ", x)
+finally:
+    # always execute this block of code
+    print("This is always executed!")
+```
+
+- Uneori, dorim sa 'ridicam' noi o exceptie intentionat.
+
+```python
+def divide(a, b):
+    if b == 0:
+        raise ZeroDivisionError("Al doilea parametru trebuie "
+                                "sa fie diferit de 0.")
+    return a / b
+
+print(divide(1, 0))
+```

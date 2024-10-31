@@ -1,0 +1,164 @@
+## 📌Programare orientata pe obiect
+Programare orientata pe obiect== modalitate
+prin care dezvoltam programe software, prin gruparea
+proprietatilor si comportamentelor
+similare in **OBIECTE** individuale.
+- Programarea orientata pe obiect ne ajuta astfel sa
+transpunem in cod modele concrete, din viata reala,
+sa le definim proprietatile si comportamentul,
+cum interactioneaza intre ele.
+(masini, companii, angajati, studenti, scoli etc.)
+
+- Exemplul 1: un obiect poate reprezenta o PERSOANA.
+Acest obiect poate fi caracterizat de
+PROPRIETATI precum: nume, varsta, adresa, dar si
+COMPORTAMENT/ACTIUNI: se plimba, respira, alearga,
+lucreaza etc.
+
+- Exemplul 2: un obiect poate reprezenta un EMAIL.
+Acest obiect poate fi caracterizat de
+PROPRIETATI precum:destinatar, subiect, continut mesaj,
+dar si COMPORTAMENT:trimitere mail, adaugare atasament la mail.
+
+- Exemplul 3: un obiect poate reprezenta o MASINA.
+Acest obiect poate fi caracterizat de
+PROPRIETATI precum: marca, model,an fabricatie, culoare, dar si
+COMPORTAMENT :pornire masina,accelerare, oprire.
+
+ ## 📌Ce este o CLASA?
+- O clasa este o reteta pentru crearea obiectelor.
+- Ea contine elemente descriptive/proprietati:
+atribute/fields(practic niste variabile).
+- Contine si actiuni posibile/comportament:
+metode (practic niste functii).
+- O clasă este creată folosind cuvântul cheie class. Atributele şi metodele
+clasei sunt listate într-un bloc de cod indentat.
+- Denumirea claselor: cuvinte capitalizate (care incep cu litera mare)
+legate intre ele. Exemple: SaleOrder, RentedCar, DeliveryOrder etc.
+
+Deci o clasa este doar concept,
+cum ar fi reteta pentru paste carbonara.
+Faptul ca exista reteta nu inseamna ca exista si pastele.
+- Dar aceeasi reteta o putem folosi ca sa facem 1, 2, 100 de portii carbonara.
+- O clasa reprezinta o structura logica
+care defineste comportamentul si starea obiectelor.
+- Dupa definirea clasei, aceasta poate fi utilizata pentru a crea obiecte de tipul respectiv.
+
+## 📌 Ce este un OBIECT?
+-Obiect = instanta a clasei
+- Toate obiectele de tip Car, vor avea acelasi comportament:
+  - Aceleasi atribute
+  - Aceleasi metode
+  - Atributele pot suferi modificari dupa initializarea obiectului
+  - Ex: o masina se poate vopsi intr-o culoare noua.
+
+- Putem crea oricate obiecte de tip Car dorim.
+- Acesta e si **avantajul OOP: write once, use n times
+
+## 📌 Ce sunt metodele?
+- Metodele au o diferenta specifica fata de functiile
+obisnuite: ele trebuie sa aiba un prefix suplimentar care trebuie
+adaugat la inceputul listei de parametri, dar nu trebuie sa-i
+dati o valoare cand apelati metoda. Python o va furniza.
+
+## 📌 self
+- Aceasta variabila speciala se refera la obiectul insusi (engl. self)
+si prin conventie este numita self.
+- Self - este instanta clasei, ajuta functia sa aiba acces la
+atributele/metodele clasei.
+- Cand ne referim la membrii clasei, vom folosi self.membru.
+
+## 📌 Ce este un constructor?
+- Am invatat ca intr-o clasa putem sa definim atribute care vor caracteriza
+obiecte de tipul clasei respective.
+- Daca dorim ca atunci cand cream obiecte dintr-o clasa, sa setam
+anumite atribute obligatoriu/ sa dam valori unor atribute, avem nevoie de
+un constructor.
+- Constructorul se asigura ca la crearea obiectelor setam niste
+date fara de care obiectul nu are sens sa existe.
+- Practic atribuim valori atributelor.
+- Daca ne gandim la un formular, ar fi acele field-uri cu *
+care sunt obligatorii.
+
+### \_\_init__
+- Metoda speciala \_\_init__() este apelata la instantierea unei clase
+  (crearea unui obiect de tipul clasei) si poate fi asemanata unui constructor.
+- Daca prin constructor suntem obligati sa dam model si color, nu am
+putea sa instantiem obiecte de tip Car fara sa dam aceste valori obligatorii.
+
+## 📌 Cum importam clase din alte fisiere?
+- from folder.folder.fisier import nume_clasa
+```python
+from folder1.car import Car
+
+## 📌 Variabile de clasa, variabile de instanta
+- Partea de date, atributele clasei, nu sunt altceva decat variabile
+obisnuite care sunt legate de spatiile de nume ale claselor si obiectelor.
+- Asta inseamna ca aceste nume sunt valabile doar in contextul
+claselor si obiectelor respective.
+- Din acest motiv, acestea sunt numite spatii de nume.
+- Exista doua tipuri de campuri: variabile de clasa si variabile de obiect/instanta,
+care sunt clasificate in functie de proprietarul variabilei.
+
+1. VARIABILE DE CLASA (CLASS ATTRIBUTES) = sunt partajate, ele pot fi accesate
+de toate instantele acelei clase. Exista doar un exemplar al variabilei
+de clasa si cand o instanta (un obiect) ii modifica valoarea, aceasta
+modificare este vazuta imediat de celalalte instante.
+2. VARIABILE DE INSTANTA (OBJECT ATTRIBUTES) = proprietatea fiecarei instante a clasei.
+In acest caz, fiecare obiect are propriul exemplar al acelui camp, adica
+ele nu sunt relationte in niciun fel cu campurile avand acelasi nume in alte instante.
+
+
+## 📌 COMENTARII IN PLUS
+
+Variabile de clasă (Class Attributes):
+Acestea sunt variabile care sunt definite la nivelul clasei și nu la nivelul instanțelor.
+Există doar un exemplar al unei variabile de clasă, indiferent câte instanțe ale clasei sunt create.
+Variabilele de clasă sunt partajate între toate instanțele acelei clase și pot fi accesate de oricare
+instanță a clasei.
+Modificările aduse unei variabile de clasă de către o instanță vor fi vizibile imediat
+pentru toate celelalte instanțe.
+
+Variabile de instanță (Object Attributes):
+Acestea sunt variabile definite la nivelul instanțelor unei clase.
+Fiecare instanță a clasei are propriul exemplar al unei variabile de instanță.
+Variabilele de instanță nu sunt partajate între instanțe și nu au nicio legătură cu
+variabilele de instanță cu același nume din alte instanțe.
+Fiecare instanță poate avea valori diferite pentru variabilele sale de instanță.
+
+Modificarea variabilei de clasă într-o instanță nu afectează celelalte instanțe:
+Dacă o instanță modifică o variabilă de clasă, această modificare nu afectează valorile variabilei
+de clasă în celelalte instanțe.
+Cu alte cuvinte, fiecare instanță poate accesa variabila de clasă și o poate modifica
+în mod independent, fără să afecteze alte instanțe.
+
+Modificarea variabilei de instanță într-o instanță nu afectează celelalte instanțe:
+Dacă o instanță modifică o variabilă de instanță, această modificare nu afectează
+valorile variabilelor de instanță din alte instanțe.
+Fiecare instanță a unei clase are propriile sale variabile de instanță,
+deci modificările aduse acestora sunt izolate la instanța respectivă și nu afectează celelalte instanțe.
+
+class MyClass:
+    class_variable = 10  # Variabilă de clasă
+
+    def __init__(self, instance_variable):
+        self.instance_variable = instance_variable  # Variabilă de instanță
+
+# Creăm două instanțe ale clasei MyClass
+obj1 = MyClass(20)
+obj2 = MyClass(30)
+
+# Modificăm variabila de clasă într-una dintre instanțe
+obj1.class_variable = 50
+
+# Modificăm variabila de instanță într-una dintre instanțe
+obj2.instance_variable = 40
+
+# Verificăm modificările
+print(obj1.class_variable)  # Output: 50 (s-a modificat doar pentru obj1)
+print(obj2.class_variable)  # Output: 10 (nu s-a modificat pentru obj2)
+print(obj1.instance_variable)  # Output: 20 (nu s-a modificat pentru obj1)
+print(obj2.instance_variable)  # Output: 40 (s-a modificat doar pentru obj2)
+
+## 📌diferenta dintre functii si metode este data de faptul ca functiile sunt independente,
+ iar metodele sunt create in interiorul clasei

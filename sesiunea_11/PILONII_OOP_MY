@@ -1,0 +1,198 @@
+## 📌 OOP - Cei 4 piloni ai programarii orientate pe obiect (OOP)
+- Acestia sunt: Mostenire, Polimorfism, Incapsulare, Abstractizare.
+
+## 📌 Inheritance - Mostenire
+- Mostenire = capacitatea unei clase de a deriva sau a mosteni din alta clasa.
+1. Clasa de baza (parent class) = clasa din care se mosteneste.
+2. Clasa derivata (child class) = clasa care mosteneste/deriva din clasa parinte.
+- Clasa copil va mosteni/va avea acces la toate proprietatile/atributele si metodele
+din clasa parinte.
+- De asemenea, clasa copil poate si sa aiba proprietati extra si sa extinda comportamentul
+clasei de baza (clasei parinte).
+
+-# Pentru a adauga proprietati noi:
+    # 1. Extindem lista de parametrii pe care metoda __init__ ii poate lua.
+    # 2. Apelam __init__-ul din clasa parinte, folosindu-ne de super(),
+    cu parametrii  necesari pentru clasa parinte.
+-# Pentru a extinde metode din clasa parinte:
+    # Facem apel la metoda din clasa parinte folosind super()
+
+O clasa copil poate sa mosteneasca un numar nelimitat de clase parinte.
+
+## 📌 Polymorphism - Polimorfism
+- Polimorfism = mai multe forme.
+- Cand avem 2 sau mai multe functii (SAU METODE ALE CLASEI) cu acelasi nume
+dar au comportament diferit.
+
+## 📌 Abstraction - Abstractizare
+-Metode abstracte/ fara corp/ fara implementare
+- O clasa abstracta contine metode abstracte dar si metode cu logica definita.
+- O interfata contine doar metode abstracte.
+- Aceste clase pot fi mostenite de clasele copii care vor trebui sa scrie
+logica metodelor.
+- "Dog class implements the Animal interface".
+- Clasa parinte e ca o reteta ce trebuie implementata exact asa de catre
+toti mostenitorii.
+
+Abstractizare:
+Abstractizarea se referă la procesul de a izola anumite caracteristici și comportamente
+ale unui obiect în modul cel mai general posibil.
+În cadrul abstractizării, se extrag trăsături comune din mai multe obiecte și se creează
+o structură comună care să le definească comportamentul și caracteristicile esențiale.
+În OOP, se utilizează clase și interfețe pentru a realiza abstractizarea.
+Clasă abstractă:
+O clasă abstractă este o clasă care nu poate fi instantiată direct, adică nu poți crea
+obiecte direct din această clasă.
+O clasă abstractă poate conține atât metode cu implementare (metode obișnuite), cât și
+metode abstracte (metode fără implementare).
+Metodele abstracte sunt definite fără a oferi o implementare specifică și trebuie să fie
+implementate în subclasele concrete care moștenesc clasa abstractă.
+Interfață:
+O interfață este similară cu o clasă abstractă, dar conține doar metode abstracte,
+fără niciun corp de metodă.
+În mod obișnuit, o clasă poate implementa mai multe interfețe, dar poate extinde
+o singură clasă abstractă.
+Interfețele sunt utile atunci când dorim să definim un contract comun pentru mai multe clase,
+indiferent de clasa reală.
+Moștenire și implementare:
+Moștenirea este un concept prin care o clasă poate prelua caracteristicile și comportamentul
+ altei clase.
+Atunci când o clasă moștenește o clasă abstractă sau implementează o interfață, trebuie
+ să implementeze toate metodele abstracte definite în clasa abstractă sau interfață.
+Astfel, clasa copil devine responsabilă de furnizarea implementării concrete pentru
+metodele abstracte.
+Exemplu:
+Să luăm un exemplu simplu: presupunem că avem o clasă abstractă Shape, care conține o
+metodă abstractă calculate_area(). Această clasă abstractă poate fi moștenită de clase
+concrete precum Circle și Square, care trebuie să implementeze metoda calculate_area()
+în funcție de formă.
+Pe de altă parte, o interfață poate fi definită ca Drawable, care conține o metodă abstractă
+draw(). Clasele precum Circle, Square, și Triangle pot implementa această interfață și
+să definească propria lor logică pentru desenare.
+În esență, abstractizarea ne permite să definim structuri și comportamente generale,
+care să poată fi apoi specializate în clase concrete, oferind astfel un nivel ridicat
+de flexibilitate și extensibilitate în proiectarea și dezvoltarea aplicațiilor.
+
+-SE FOLOSESTE
+from abc import ABC, abstractmethod
+
+
+## 📌 Encapsulation - Encapsulare
+- Encapsularea este procesul prin care facem datele si comportamentul
+dintr-o clasa, sa nu fie accesibile in exteriorul acesteia.
+- Pentru asta, facem datele/atributele si/sau metodele PRIVATE.
+- Pentru a face un atribut sau o metoda privata, punem _ _ in fata numelui
+atributului/metodei.
+
+- Mai exista optiunea de PROTECTED ATTRIBUTES/METHODS.
+- Pentru a face atributele/metodele protected, punem un singur _
+in fata numelui atributului/metodei.
+- Atributele/metodele protected pot fi accesate din exterior.
+- Protected este doar o conventie prin care putem informa ceilalti programatori
+ca atributul/metoda nu ar trebui sa fie folosita in afara clasei.
+
+- Encapsularea se foloseste si pentru a nu aglomera optiunile
+utilizatorului, ascunzand atributele.
+- In loc sa vada toate atributele si metodele, va vedea doar metodele.
+- Astfel, pastram codul clean/curat.
+
+
+## 📌Getter și setter sunt două concepte asociate cu accesul și modificarea valorilor
+ atributelor în programarea orientată pe obiecte. Acestea sunt utilizate pentru a controla
+  accesul la atributele clasei și pentru a asigura o mai mare securitate și modularitate
+  în cod. Iată o explicație mai detaliată pentru fiecare:
+
+Getter:
+Un getter este o metodă utilizată pentru a obține valoarea unui atribut privat al unei clase.
+Acesta permite accesul la valoarea atributului din afara clasei, dar într-un mod controlat
+și securizat.
+Getterul oferă o interfață pentru a citi valoarea atributului, fără a permite modificarea
+directă a acestuia.
+De obicei, un getter este definit cu un prefix get_ urmat de numele atributului
+(de exemplu, get_color() pentru a obține valoarea atributului color).
+Setter:
+Un setter este o metodă utilizată pentru a seta sau actualiza valoarea unui atribut privat
+al unei clase.
+Acesta permite modificarea valorii atributului din afara clasei, dar într-un mod controlat
+ și securizat.
+Setterul oferă o interfață pentru a actualiza valoarea atributului, permițând validarea și
+prelucrarea acesteia înainte de a fi setată.
+De obicei, un setter este definit cu un prefix set_ urmat de numele atributului
+(de exemplu, set_color() pentru a seta valoarea atributului color).
+
+class Person:
+    def __init__(self, name, age):
+        self.__name = name  # Atribut privat "__name"
+        self.__age = age    # Atribut privat "__age"
+
+    # Getter pentru atributul "__name"
+    def get_name(self):
+        return self.__name
+
+    # Setter pentru atributul "__name"
+    def set_name(self, name):
+        self.__name = name
+
+    # Getter pentru atributul "__age"
+    def get_age(self):
+        return self.__age
+
+    # Setter pentru atributul "__age"
+    def set_age(self, age):
+        if age >= 0:
+            self.__age = age
+        else:
+            print("Vârsta trebuie să fie un număr pozitiv.")
+
+# Creăm o instanță a clasei Person
+person1 = Person("John", 30)
+
+# Utilizăm getteri pentru a accesa atributele clasei
+print("Nume:", person1.get_name())  # Output: Nume: John
+print("Vârstă:", person1.get_age())  # Output: Vârstă: 30
+
+# Utilizăm setteri pentru a modifica atributele clasei
+person1.set_name("Jane")
+person1.set_age(35)
+
+# Afișăm valorile actualizate folosind getteri
+print("Noul nume:", person1.get_name())  # Output: Noul nume: Jane
+print("Noua vârstă:", person1.get_age())  # Output: Noua vârstă: 35
+
+# Încercăm să setăm o vârstă negativă (va genera un mesaj de eroare)
+person1.set_age(-5)  # Output: Vârsta trebuie să fie un număr pozitiv.
+
+
+SAU FOLOSIND DECORATORII PROPERTY, COLOG_GETTER, COLOR_SETTER
+class CarPy:
+
+    def __init__(self, color):
+        self.__color = color
+
+    @property
+    def color(self):
+        return self.__color
+
+    @color.getter
+    def color(self):
+        print(f"Getter: Culoarea este {self.__color}")
+        return self.__color
+
+    @color.setter
+    def color(self, culoare_noua):
+        print(f"Setter: Noua culoare este {culoare_noua}")
+        self.__color = culoare_noua
+
+    @color.deleter
+    def color(self):
+        print(f"Deleter: Am sters culoarea")
+        self.__color = None
+
+car2 = CarPy('gray')
+print(car2.color)
+
+car2.color = 'red'
+print(car2.color)
+
+del car2.color
+print(car2.color)
